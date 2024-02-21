@@ -1,0 +1,40 @@
+/*Propiedades customizadas*/
+:root{
+    --fuentePrincipal: 'Roboto', cursive;
+    --primario: #0A475C;
+    --secundario: #42BEA5;
+    --gris: #B9B9B9;
+    --blanco: #FFF;
+
+}
+
+/*Aplicacion del modelo de caja natural al layout*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*Globales*/
+body {
+    font-family: var(--fuentePrincipal);
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
