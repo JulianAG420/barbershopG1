@@ -1,6 +1,14 @@
 <div>
-    <label for="nombreCompleto">Nombre Completo:</label>
-    <input type="text" name="nombreCompleto" id="nombreCompleto" placeholder="Ingresa tu nombre completo">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre">
+</div>
+<div>
+    <label for="apellido">Apellido:</label>
+    <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido">
+</div>
+<div>
+    <label for="telefono">Telefono:</label>
+    <input type="text" name="telefono" id="telefono" placeholder="Ingresa tu numero de telefono">
 </div>
 <div>
     <label for="correo">Correo electrónico:</label>

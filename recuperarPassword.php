@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if ($correoOk && $nuevoPasswordOk){
-        require_once "DAL/usuarios.php";
+        require_once "DAL/clientes.php";
         if(recuperarPassword($correo,$nuevoPasswordHash)){
         header("Location: login.php?recuperar=2");
         }

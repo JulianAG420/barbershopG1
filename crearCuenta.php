@@ -8,12 +8,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     require_once "include/functions/recoge.php";
 
     //Sanitizacion de los elementos ingresados por el usuario
-    $nombreCompleto = recogePost("nombreCompleto");
+    $nombre = recogePost("nombre");
+    $apellido = recogePost("apellido");
+    $telefono = recogePost("telefono");
     $correo = recogePost("correo");
     $password = recogePost("password");
 
     //Formatos de validacion
     $patronNombre = '/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/'; // Formato aceptado para letras y espacios
+    $patronApellido = '/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/'; // Formato aceptado para letras y espacios
+    $patronTelefono = '/^\d{8}$/';// Formato aceptado telefono
     $patronCorreo = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/'; // Formato aceptado de correo electrónico
     $patronPassword = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'; // Formato aceptado para el password
     /*Debe contener al menos 8 caracteres.
@@ -24,7 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     */
 
     //Identificacion match entre parametros aceptados vs los datos ingresados por el usuario
-    $nombreOk = preg_match($patronNombre, $nombreCompleto);
+    $nombreOk = preg_match($patronNombre, $nombre);
+    $apellidoOk = preg_match($patronApellido, $apellido);
+    $telefonoOk = preg_match($patronTelefono, $telefono);
     $correoOk = preg_match($patronCorreo, $correo);
     $passwordOk = preg_match($patronPassword, $password);
 
@@ -35,6 +41,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if (!$nombreOk){
         $errores[] = "El nombre ingresado no es válido";
     }
+    if (!$apellidoOk){
+        $errores[] = "El apellido ingresado no es válido";
+    }
+    if (!$telefonoOk){
+        $errores[] = "El formato de numero telefonico ingresado no es válido";
+    }
     if (!$correoOk){
         $errores[] = "La direccion de correo no es válida";
     }
@@ -42,11 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $errores[] = "El password ingresado no es valido";
     }
 
-    if ($nombreOk && $correoOk && $passwordOk){
+    if ($nombreOk && $apellidoOk && $telefonoOk && $correoOk && $passwordOk){
         //Inclusion de el archivo donde estan mis funciones CRUD
-        require_once "DAL/usuarios.php";
+        require_once "DAL/clientes.php";
         //Ingreso de los valores ingresados por el usuario a la DB
-        if(IngresarUsuarios($nombreCompleto,$correo,$passwordHash)){
+        if(IngresarClientes($nombre, $apellido, $telefono, $correo, $passwordHash)){
         header("Location: login.php?ingreso=1");
         }
     }else{

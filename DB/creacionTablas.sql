@@ -1,12 +1,20 @@
 -- Creacion de las tablas y su respectiva normalizacion
 
+-- Tabla AccesoUsuario
+CREATE TABLE AccesoUsuario (
+	AccesoUsuarioID INT PRIMARY KEY AUTO_INCREMENT,
+    TipoPermiso VARCHAR(255)
+);
 -- Tabla Clientes
 CREATE TABLE Clientes (
     ClienteID INT PRIMARY KEY AUTO_INCREMENT,
     Nombre VARCHAR(50),
     Apellido VARCHAR(50),
     Telefono VARCHAR(20),
-    Email VARCHAR(100)
+    Email VARCHAR(100),
+    AccesoUsuarioID INT SET DEFAULT 1,
+    Pass_word VARCHAR(100),
+    FOREIGN KEY (AccesoUsuarioID) REFERENCES AccesoUsuario(AccesoUsuarioID)
 );
 
 -- Tabla Citas
@@ -98,18 +106,12 @@ CREATE TABLE ComentariosValoraciones (
     FOREIGN KEY (EstilistaID) REFERENCES Estilistas(EstilistaID)
 );
 
--- Tabla AccesoUsuario
-CREATE TABLE AccesoUsuario (
-	AccesoUsuarioID INT PRIMARY KEY AUTO_INCREMENT,
-    TipoPermiso VARCHAR(255)
-);
-
 -- Tabla Usuarios
 CREATE TABLE Usuarios (
     UsuarioID INT PRIMARY KEY AUTO_INCREMENT,
     Email VARCHAR(255),
     Pass_word VARCHAR(255),
-    AccesoUsuarioID INT SET DEFAULT 1,
+    AccesoUsuarioID INT SET DEFAULT 2,
     NombreCompleto VARCHAR(255),
     FOREIGN KEY (AccesoUsuarioID) REFERENCES AccesoUsuario(AccesoUsuarioID)
 );

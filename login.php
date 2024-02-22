@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //Inclusion de el archivo donde estan mis funciones CRUD
         require_once "DAL/usuarios.php";
 
-        $query = "SELECT usuarioid, email, pass_word, accesousuarioid, nombrecompleto FROM usuarios WHERE email = '$correo'";
+        $query = "SELECT nombre, apellido, telefono, email, pass_word, accesousuarioid FROM clientes WHERE email = '$correo'";
 
         $sesionAbierta = getObject($query);
         var_dump($sesionAbierta);
