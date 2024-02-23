@@ -1,50 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estilistas</title>
-<!-- css para seccionar a los estilistas y hacerlo mas estetico-->    <style>
-    .estilista {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #B9B9B9;
-            border-radius: 5px;
-        }
-        .estilista img {
-            width: 100px;
-            height: auto;
-            margin-right: 20px;
-        }
-        #horarios {
-            margin: 0 auto; 
-            padding: 20px;
-            background-color: #B9B9B9;
-            border-radius: 5px;
-            text-align: center;
-        }
-        h1 {
-            text-align: center;
-        }
-
-        .links a {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #f0f0f0;
-    color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.links a:hover {
-    background-color: #ddd;
-}
-    </style>
-</head>
+<?php
+require_once "include/templates/head.php"
+?>
 <body>
 <div class="links">
         <a href="index.php">Ir a la página inicial</a>
@@ -118,5 +74,48 @@
         <p>Sábado: 9:00 - 18:00</p>
         <p>Domingo: Cerrado</p>
     </div>
-</body>
-</html>
+
+<!-- css para seccionar a los estilistas y hacerlo mas estetico-->    
+<style>
+    .estilista {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #B9B9B9;
+            border-radius: 5px;
+        }
+        .estilista img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+        #horarios {
+            margin: 0 auto; 
+            padding: 20px;
+            background-color: #B9B9B9;
+            border-radius: 5px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        .links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.links a:hover {
+    background-color: #ddd;
+}
+    </style>
+<?php
+require_once "include/templates/footer.php"
+?>

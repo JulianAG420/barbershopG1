@@ -33,11 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (empty($errores)) {
         //Inclusion de el archivo donde estan mis funciones CRUD
-        require_once "DAL/usuarios.php";
+        //require_once "DAL/usuarios.php";
+        require_once "DAL/clientes.php";
 
-        $query = "SELECT nombre, apellido, telefono, email, pass_word, accesousuarioid FROM clientes WHERE email = '$correo'";
+        $query = "SELECT clienteid, nombre, apellido, telefono, email, pass_word, accesousuarioid FROM clientes WHERE email = '$correo'";
+        //$query = "SELECT usuarioid, email, pass_word, accesousuarioid, nombrecompleto FROM usuarios WHERE email = '$correo'";
 
         $sesionAbierta = getObject($query);
+
         var_dump($sesionAbierta);
 
         //Validacion de datos segun el query ejecutado en la sesion
@@ -49,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 session_start();
                 $_SESSION['usuario'] = $sesionAbierta['email'];
                 $_SESSION['id'] = $sesionAbierta['usuarioid'];
-                $_SESSION['login'] = $sesionAbierta['true'];
+                $_SESSION['login'] = TRUE;
                 header("Location: index.php");
             }else{
                 $errores[] = "Contraseña Incorrecta";

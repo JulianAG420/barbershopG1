@@ -1,17 +1,87 @@
-<div class="contenedor">
-    <div>
-        <a href="recuperarPassword.php">Reiniciar Contraseña</a>
+<body>
+    <div class="contenedor">
+        <h1>Menu Principal</h1>
     </div>
-    <div>
-        <a href="productos.php">Nuestros Productos</a>
-    </div>
-    <div>
-        <a href="citas.php">Agenda tu Cita</a>
-    </div>
-    <div>
-        <a href="reseñas.php">Reseñas</a>
-    </div>
-    <div>
-        <a href="promociones.php">Mira nuestras Promociones</a>
-    </div>
+    <header>
+        <div>
+            <img src="img/ImagenBanner.png" alt="Imagen Banner">
+        </div>
+    </header>
+
+    <div class="section-links">
+    <a href="empleados.php" class="section-link">
+        <h2>Sección de Empleados</h2>
+    </a>
+
+    <a href="reseñas.php" class="section-link">
+        <h2>Sección de Reseñas</h2>
+    </a>
+
+    <a href="recuperarPassword.php" class="section-link">
+        <h2>Sección de Reinicio de Clave</h2>
+    </a>
+
+    <a href="citas.php" class="section-link">
+        <h2>Sección de Citas</h2>
+    </a>
+
+    <a href="promociones.php" class="section-link">
+        <h2>Sección de Promociones</h2>
+    </a>
+    <a href="productos.php" class="section-link">
+        <h2>Sección de Productos</h2>
+    </a>
 </div>
+    
+    <div>
+        <a href="cerrarSesion.php">Cerrar Sesión</a>
+    </div>
+</body>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .section-links {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .section-link {
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 2px solid #007bff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        text-align: center;
+        width: 100%;
+    }
+
+    .section-link:hover {
+        transform: translateY(-5px);
+    }
+
+    .section-link h2 {
+        margin-top: 0;
+        color: #333333;
+    }
+
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .contenedor-imagen img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>

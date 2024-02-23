@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php
+ require_once "include/templates/head.php"
+?>
 
-    <title>Formulario de Reseñas</title>
-</head>
 <body>
     <h1>Formulario de Reseñas</h1>
     <form action="procesar_reseña.php" method="POST">
@@ -24,8 +20,6 @@
         <input type="submit" value="Enviar Reseña">
   
     </form>
-</body>
-</html>
 
 
 <style>
@@ -88,3 +82,8 @@ input[type="submit"]:hover {
 
 
 </style>
+
+
+<?php
+ include_once "include/templates/footer.php"
+?>

@@ -1,8 +1,4 @@
-<?php
-require_once "include/templates/head.php";
-?>
-
-<header>
+<body>
     <div class="links">
         <a href="index.php">Ir a la página inicial</a>
         <a href="reseñas.php">Ir a las reseñas</a>
@@ -10,10 +6,7 @@ require_once "include/templates/head.php";
         <a href="citas.php">hacer una Citas</a>
         <a href="promociones.php">Promociones</a>
     </div>
-</header>
-
-<body>
-    <h1>Productos a la venta</h1>
+    <h1>Productos a la Venta</h1>
     <table>
         <tr>
             <th> Producto</th>
@@ -73,37 +66,39 @@ require_once "include/templates/head.php";
             width: 100%;
             border-collapse: collapse;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
         }
+
         th {
             background-color: #f2f2f2;
         }
+
         .product-info {
             display: flex;
             align-items: center;
         }
+
         .product-info img {
             margin-right: 50px;
         }
+
         .links a {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #f0f0f0;
-    color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-.links a:hover {
-    background-color: #ddd;
-}
+        .links a:hover {
+            background-color: #ddd;
+        }
     </style>
-
-<?php
-include_once "include/templates/footer.php";
-?>
