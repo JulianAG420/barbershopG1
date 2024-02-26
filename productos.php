@@ -2,6 +2,9 @@
 require_once "include/templates/head.php";
 ?>
 
+
+
+<link rel="stylesheet" href="css/productos.css">
 <header>
     <div class="links">
         <a href="index.php">Ir a la página inicial</a>
@@ -69,39 +72,7 @@ require_once "include/templates/head.php";
 
 
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .product-info {
-            display: flex;
-            align-items: center;
-        }
-        .product-info img {
-            margin-right: 50px;
-        }
-        .links a {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #f0f0f0;
-    color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.links a:hover {
-    background-color: #ddd;
-}
+   
     </style>
 
 <?php
