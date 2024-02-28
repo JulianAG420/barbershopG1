@@ -1,4 +1,5 @@
 <?php
+//prueba de conexion
 //Se reanuda la sesion proveniente desde el login con el usuario respectivo
 session_start();
 var_dump($_SESSION);
