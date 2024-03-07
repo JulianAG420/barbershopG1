@@ -2,9 +2,7 @@
     <div class="links">
         <a href="index.php">Ir a la página inicial</a>
         <a href="reseñas.php">Ir a las reseñas</a>
-        <a href="recuperarPassword.php">Reinicio de clave</a>
         <a href="citas.php">Citas</a>
-        <a href="promociones.php">Promociones</a>
     </div>
     <!--promociones con descripcion y demas atributos  -->
     <h1>Promociones por tiempo limitado!</h1>
@@ -17,7 +15,6 @@
         <p><strong>Fecha de Fin:</strong> 01-03-2024</p>
         <p><strong>Descuento:</strong> 10%</p>
         <p><strong>Condiciones:</strong>Promocion aplica al pagar con tarjeta amex black</p>
-        <button class="boton-reclamar">Reclamar Promoción</button>
     </div>
 
     <div class="promocion">
@@ -28,5 +25,4 @@
         <p><strong>Fecha de Fin:</strong> 01-03-2024</p>
         <p><strong>Descuento:</strong> 20%</p>
         <p><strong>Condiciones:</strong> Promocion aplica al llevar 2 o mas articulos</p>
-        <button class="boton-reclamar">Reclamar Promoción</button>
     </div>

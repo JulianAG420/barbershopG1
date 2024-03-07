@@ -258,28 +258,18 @@ input[type="submit"]:hover {
     padding: 10px;
     margin-bottom: 20px;
     overflow: hidden;
-}
+    background-color: var(--gris);
 
-.promocion h2 {
-    margin-top: 0;
-}
+    img {
+        width: 500px;
+        height: 500px;
+        margin-right: 20px;
+    }
 
-.promocion .boton-reclamar {
-    float: right;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
+    h2 {
+        text-align: left;
+    }
 }
-
-.promocion img {
-    width: 500px;
-    height: 500px;
-    margin-right: 20px;
-}
-
 
 .links a {
     display: inline-block;
@@ -398,6 +388,8 @@ background-color: #ddd;
 
 /*Footer*/
 .footer{
+    margin-bottom: 3rem;
+    
     p{
         text-align: center;
         color: var(--blanco);

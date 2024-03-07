@@ -2,7 +2,6 @@
 <div class="links">
         <a href="index.php">Ir a la página inicial</a>
         <a href="reseñas.php">Ir a las reseñas</a>
-        <a href="recuperarPassword.php">Reinicio de clave</a>
         <a href="citas.php">Citas</a>
         <a href="promociones.php">Promociones</a>
         </div>
