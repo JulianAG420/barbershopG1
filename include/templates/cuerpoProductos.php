@@ -6,7 +6,9 @@
         <a href="citas.php">hacer una Citas</a>
         <a href="promociones.php">Promociones</a>
     </div>
+
     <h1>Productos a la Venta</h1>
+    
     <table>
         <tr>
             <th> Producto</th>
@@ -58,47 +60,3 @@
             <td>25</td>
         </tr>
     </table>
-
-
-
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th,
-        td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .product-info {
-            display: flex;
-            align-items: center;
-        }
-
-        .product-info img {
-            margin-right: 50px;
-        }
-
-        .links a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .links a:hover {
-            background-color: #ddd;
-        }
-    </style>

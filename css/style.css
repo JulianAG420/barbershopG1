@@ -38,3 +38,368 @@ a {
 img {
     max-width: 100%;
 }
+
+h1 {
+    text-align: center;
+    margin-top: 50px; 
+    color: var(--blanco);
+}
+
+h2 {
+    text-align: center;
+    color: black;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+/*Index*/
+
+.titulo-imagen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+} 
+
+
+.section-links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.section-link {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+
+.section-link:hover {
+    transform: translateY(-5px);
+}
+
+.section-link h2 {
+    margin-top: 0;
+    color: #333333;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.contenedor-imagen img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Productos*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--gris);
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+.product-info {
+    display: flex;
+    align-items: center;
+}
+.product-info img {
+    margin-right: 50px;
+}
+.links a {
+display: inline-block;
+margin: 10px;
+padding: 10px 20px;
+background-color: #f0f0f0;
+color: #333;
+text-decoration: none;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+}
+
+.links a:hover {
+background-color: #ddd;
+}
+
+/*Reseñas*/
+.review {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    background-color: var(--gris);
+  }
+
+  .rating {
+    background-color: #f8b400;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    margin-right: 20px;
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+
+
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+  }
+
+
+  .button:hover {
+    background-color: #45a049;
+  }
+
+  .links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .links a:hover {
+    background-color: #ddd;
+  }
+
+/*EscribirReseña*/
+
+form {
+    width: 50%; 
+    margin: 0 auto; 
+    background-color: #fff; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+input[type="number"],
+input[type="date"],
+input[type="submit"] {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+textarea {
+    height: 100px; 
+}
+
+input[type="submit"] {
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+/*Promociones*/
+.promocion {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.promocion h2 {
+    margin-top: 0;
+}
+
+.promocion .boton-reclamar {
+    float: right;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.promocion img {
+    width: 500px;
+    height: 500px;
+    margin-right: 20px;
+}
+
+
+.links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.links a:hover {
+    background-color: #ddd;
+}
+
+/*Empleados*/
+.estilista {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--gris);
+    border-radius: 5px;
+}
+.estilista img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+#horarios {
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #B9B9B9;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.links a {
+display: inline-block;
+margin: 10px;
+padding: 10px 20px;
+background-color: #f0f0f0;
+color: #333;
+text-decoration: none;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+}
+
+.links a:hover {
+background-color: #ddd;
+}
+
+/*Citas*/
+#banner {
+    width: 100%;
+    height: 200px;
+    background-image: url('../img/bannercitas.png');
+    background-size: cover;
+}
+
+#agendar-cita {
+    padding: 20px;
+}
+
+.confirmar-cita {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.confirmar-cita h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.boton {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#otras-fechas-disponibles {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.fecha-disponible {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fecha-disponible img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.links a:hover {
+    background-color: #ddd;
+}
+
+/*Footer*/
+.footer{
+    p{
+        text-align: center;
+        color: var(--blanco);
+    }
+}
