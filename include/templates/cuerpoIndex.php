@@ -14,15 +14,15 @@
 
     <div class="section-links">
         <a href="empleados.php" class="section-link">
-            <h2>Sección de Empleados</h2>
+            <h2>Sección de Estilistas</h2>
         </a>
 
-        <a href="reseñas.php" class="section-link">
+        <a href="resenas.php" class="section-link">
             <h2>Sección de Reseñas</h2>
         </a>
 
         <a href="citas.php" class="section-link">
-            <h2>Sección de Citas</h2>
+            <h2>Sección de Servicios y Agendar Citas</h2>
         </a>
 
         <a href="promociones.php" class="section-link">

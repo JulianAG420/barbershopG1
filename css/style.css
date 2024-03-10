@@ -354,7 +354,17 @@ background-color: #ddd;
     cursor: pointer;
 }
 
-#otras-fechas-disponibles {
+.boton-azul {
+    background-color: blue;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#citas-imagen {
     margin-top: 50px;
     padding: 20px;
     background-color: #f0f0f0;
@@ -388,8 +398,7 @@ background-color: #ddd;
 
 /*Footer*/
 .footer{
-    margin-bottom: 3rem;
-    
+    padding: 1rem;
     p{
         text-align: center;
         color: var(--blanco);

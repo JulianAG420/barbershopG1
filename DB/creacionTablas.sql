@@ -28,14 +28,24 @@ CREATE TABLE Citas (
 );
 
 -- Tabla Servicios
-CREATE TABLE Servicios (
-    ServicioID INT PRIMARY KEY AUTO_INCREMENT,
-    Nombre VARCHAR(100),
-    DuracionEstimada INT,
-    Precio DECIMAL(10,2),
-    Descripcion VARCHAR(255)
+CREATE TABLE `servicios` (
+  `ServicioID` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(100) DEFAULT NULL,
+  `Precio` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`ServicioID`)
 );
 
+-- Tabla Central CitasServicios
+CREATE TABLE `citasservicios` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ServicioID` int(11) DEFAULT NULL,
+  `CitaID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `CitaID` (`CitaID`),
+  KEY `ServicioID` (`ServicioID`),
+  CONSTRAINT `citasservicios_ibfk_1` FOREIGN KEY (`CitaID`) REFERENCES `citas` (`CitaID`),
+  CONSTRAINT `citasservicios_ibfk_2` FOREIGN KEY (`ServicioID`) REFERENCES `servicios` (`ServicioID`)
+);
 -- Tabla Estilistas
 CREATE TABLE Estilistas (
     EstilistaID INT PRIMARY KEY AUTO_INCREMENT,
@@ -43,7 +53,8 @@ CREATE TABLE Estilistas (
     Apellido VARCHAR(50),
     Especialidades VARCHAR(255),
     HorarioTrabajo VARCHAR(255),
-    Contacto VARCHAR(100)
+    Contacto VARCHAR(100),
+    Imagen VARCHAR(255)
 );
 
 -- Tabla Categorias
@@ -61,6 +72,7 @@ CREATE TABLE Productos (
     PrecioVenta DECIMAL(10,2),
     CantidadInventario INT,
     Proveedor VARCHAR(100),
+    Imagen VARCHAR(255),
     FOREIGN KEY (CategoriaID) REFERENCES Categorias (CategoriaID)
 );
 
@@ -91,7 +103,8 @@ CREATE TABLE Promociones (
     FechaInicio DATE,
     FechaFin DATE,
     Descuento DECIMAL(5,2),
-    Condiciones VARCHAR(255)
+    Condiciones VARCHAR(255),
+    Imagen VARCHAR(255)
 );
 
 -- Tabla ComentariosValoraciones

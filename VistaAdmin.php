@@ -1,9 +1,11 @@
 <?php
- require_once "include/templates/CuerpoVistaAdmin.php"
+ require_once "include/templates/head.php"
 ?>
 
-
+<?php
+ include "include/templates/CuerpoVistaAdmin.php"
+?>
 
 <?php
- include_once "include/templates/footer.php"
+ include "include/templates/footer.php"
 ?>

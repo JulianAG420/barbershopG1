@@ -1,72 +1,44 @@
+<?php
+require_once "DAL/empleados.php";
+
+
+$query = "SELECT * FROM estilistas";
+
+$resultadosQuery = getArray($query);
+
+//var_dump($resultadosQuery);
+
+?>
+
+
 <body>
-<div class="links">
-        <a href="index.php">Ir a la página inicial</a>
-        <a href="reseñas.php">Ir a las reseñas</a>
+    <div class="links">
+        <a href="index.php">Menu Principal</a>
+        <a href="resenas.php">Reseñas</a>
         <a href="citas.php">Citas</a>
+        <a href="productos.php">Productos</a>
         <a href="promociones.php">Promociones</a>
-        </div>
+    </div>
     <!-- estilistas con sus atributos-->
-    <h1>Estilistas y Horario de la Barbería</h1>
-    <div class="estilista">
-        <img src=img/estilista1.png alt="Foto de Estilista 1">
-        <div>
-        <p><strong>ID :</strong> 1</p>
-            <p><strong>Nombre:</strong> Javier </p>
-            <p><strong>Apellido:</strong> Obando</p>
-            <p><strong>Especialidades:</strong> Estilista </p>
-            <p><strong>Horario de Trabajo:</strong> 9:00am - 5:00pm</p>
-            <p><strong>Contacto:</strong> jaoba@hotmail.com</p>
-        </div>
-    </div>
-    <div class="estilista">
-        <img src=img/estilista2.png " alt="Foto de Estilista 2">
-        <div>
-        <p><strong>ID :</strong> 2</p>
-            <p><strong>Nombre:</strong> Melissa </p>
-            <p><strong>Apellido:</strong> Briones</p>
-            <p><strong>Especialidades:</strong> Estilista</p>
-            <p><strong>Horario de Trabajo:</strong> 11:00am - 5:00pm</p>
-            <p><strong>Contacto:</strong> mebi@hotmail.com</p>
-        </div>
-    </div>
-    <div class="estilista">
-        <img src=img/estilista3.png alt="Foto de Estilista 2">
-        <div>
-        <p><strong>ID :</strong> 3</p>
-            <p><strong>Nombre:</strong> Liz </p>
-            <p><strong>Apellido:</strong> Smith</p>
-            <p><strong>Especialidades:</strong> Estilista </p>
-            <p><strong>Horario de Trabajo:</strong> 9:00am - 5:00pm</p>
-            <p><strong>Contacto:</strong> Lizmi@hotmail.com</p>
-        </div>
-    </div>
-    <div class="estilista">
-        <img src=img/estilista4.png alt="Foto de Estilista 2">
-        <div>
-        <p><strong>ID :</strong> 4</p>
-            <p><strong>Nombre:</strong> Pablo </p>
-            <p><strong>Apellido:</strong> Rodrigo</p>
-            <p><strong>Especialidades:</strong> Estilista </p>
-            <p><strong>Horario de Trabajo:</strong> 9:00am - 5:00pm</p>
-            <p><strong>Contacto:</strong> paro@hotmail.com</p>
-        </div>
-        </div>
+    <h1>Nuestros Estilistas y Horario de la Barbería</h1>
+
+    <?php foreach ($resultadosQuery as $resultado) : ?>
         <div class="estilista">
-        <img src=img/estilista5.png alt="Foto de Estilista 2">
-        <div>
-        <p><strong>ID :</strong> 5</p>
-            <p><strong>Nombre:</strong> Ken </p>
-            <p><strong>Apellido:</strong> Smith</p>
-            <p><strong>Especialidades:</strong> Estilista</p>
-            <p><strong>Horario de Trabajo:</strong> 9:00am - 5:00pm</p>
-            <p><strong>Contacto:</strong> kensm@hotmail.com</p>
+            <img src="<?php echo $resultado['imagen']; ?>" alt="Foto de Estilista 1">
+            <div>
+                <p><strong>Nombre:</strong> <?php echo $resultado['Nombre']; ?> </p>
+                <p><strong>Apellido:</strong> <?php echo $resultado['Apellido']; ?> </p>
+                <p><strong>Especialidades:</strong> <?php echo $resultado['Especialidades']; ?> </p>
+                <p><strong>Horario de Trabajo:</strong> <?php echo $resultado['HorarioTrabajo']; ?> </p>
+                <p><strong>Contacto:</strong> <?php echo $resultado['Contacto']; ?> </p>
+            </div>
         </div>
-  
-    </div>
+    <?php endforeach; ?>
+
     <!--seccion de horarios -->
     <div id="horarios">
         <h2>Nuestros Horarios</h2>
-        <p>Lunes a Viernes: 9:00 - 20:00</p>
-        <p>Sábado: 9:00 - 18:00</p>
-        <p>Domingo: Cerrado</p>
+        <p>Lunes a Viernes: 9:00 AM - 8 PM</p>
+        <p>Sábado: 9:00 AM - 6 PM</p>
+        <p>Domingo: Cerrados</p>
     </div>

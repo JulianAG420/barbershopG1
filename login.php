@@ -36,25 +36,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //require_once "DAL/usuarios.php";
         require_once "DAL/clientes.php";
 
-        $query = "SELECT clienteid, nombre, apellido, telefono, email, pass_word, accesousuarioid FROM clientes WHERE email = '$correo'";
-        //$query = "SELECT usuarioid, email, pass_word, accesousuarioid, nombrecompleto FROM usuarios WHERE email = '$correo'";
+        $queryCliente = "SELECT clienteid, nombre, apellido, telefono, email, pass_word, accesousuarioid FROM clientes WHERE email = '$correo'";
+        $queryAdmin = "SELECT usuarioid, email, pass_word, accesousuarioid, nombrecompleto FROM usuarios WHERE email = '$correo'";
 
-        $sesionAbierta = getObject($query);
+        $sesionAbiertaCliente = getObject($queryCliente);
+        $sesionAbiertaAdmin = getObject($queryAdmin);
 
-        var_dump($sesionAbierta);
 
         //Validacion de datos segun el query ejecutado en la sesion
-        if ($sesionAbierta != NULL) {
+        if ($sesionAbiertaCliente != NULL || $sesionAbiertaAdmin != NULL) {
             //Verificacion de contraseñas entre lo ingresado por el usuario y lo almacenado en la DB
-            $auth = password_verify($passwordOk, $sesionAbierta['pass_word']);
+            $authCliente = password_verify($passwordOk, $sesionAbiertaCliente['pass_word']);
+            $authAdmin = password_verify($passwordOk, $sesionAbiertaAdmin['pass_word']);
             //Si la autenticacion es verdadera abre un session thread
-            if ($auth) {
+            if ($authCliente) {
                 session_start();
-                $_SESSION['usuario'] = $sesionAbierta['email'];
-                $_SESSION['id'] = $sesionAbierta['usuarioid'];
+                $_SESSION['usuario'] = $sesionAbiertaCliente['email'];
+                $_SESSION['id'] = $sesionAbiertaCliente['clienteid'];
+                $_SESSION['tipoAcceso'] = $sesionAbiertaCliente['accesousuarioid'];
                 $_SESSION['login'] = TRUE;
-                header("Location: index.php");
-            }else{
+                header("Location: index.php?cliente&id={$_SESSION['id']}");
+            }elseif($authAdmin){
+                session_start();
+                $_SESSION['usuario'] = $sesionAbiertaAdmin['email'];
+                $_SESSION['id'] = $sesionAbiertaAdmin['usuarioid'];
+                $_SESSION['tipoAcceso'] = $sesionAbiertaAdmin['accesousuarioid'];
+                $_SESSION['login'] = TRUE;
+                header("Location: index.php?admin&id={$_SESSION['id']}");
+            }
+            else{
                 $errores[] = "Contraseña Incorrecta";
                 
             }
@@ -82,14 +92,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </ul>
         <form method="POST">
             <?php require_once "include/templates/cuerpoLogin.php"; ?>
-            <button type="submit">Ingresar</button>
+            <button class="boton-azul" type="submit">Ingresar</button>
         </form>
     </main>
 
-    <div>
-        <a href="crearCuenta.php">Registrarse</a>
-        <a href="recuperarPassword.php">Restaurar Contraseña</a>
-    </div>
+        <div style="margin-top: 2rem; margin-right: 30rem;" class="contenedor">
+
+            <a class="boton" href="crearCuenta.php">Registrarse</a>
+        </div>
+
+        <div style="margin-top: 2rem; margin-right: 30rem;" class="contenedor">
+
+            <a class="boton" href="recuperarPassword.php">Restaurar Contraseña</a>
+        </div>
+
     
 <?php
     include "include/templates/footer.php";

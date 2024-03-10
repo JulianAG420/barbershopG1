@@ -1,28 +1,35 @@
+<?php
+require_once "DAL/promociones.php";
+
+
+$query = "SELECT * FROM promociones";
+
+$resultadosQuery = getArray($query);
+
+//var_dump($resultadosQuery);
+
+?>
+
 <body>
     <div class="links">
-        <a href="index.php">Ir a la página inicial</a>
-        <a href="reseñas.php">Ir a las reseñas</a>
+        <a href="index.php">Menu Principal</a>
+        <a href="empleados.php">Estilistas</a>
+        <a href="resenas.php">Reseñas</a>
         <a href="citas.php">Citas</a>
-    </div>
-    <!--promociones con descripcion y demas atributos  -->
-    <h1>Promociones por tiempo limitado!</h1>
-    
-    <div class="promocion">
-        <img src=img/espuma.jpg alt="promo1">
-        <h2>Espuma Nivea</h2>
-        <p><strong>Descripción:</strong>Espuma de afeitar Nivea men para todo tipo de piel</p>
-        <p><strong>Fecha de Inicio:</strong> 01-01-2024</p>
-        <p><strong>Fecha de Fin:</strong> 01-03-2024</p>
-        <p><strong>Descuento:</strong> 10%</p>
-        <p><strong>Condiciones:</strong>Promocion aplica al pagar con tarjeta amex black</p>
+        <a href="productos.php">Productos</a>
     </div>
 
+    <!--promociones con descripcion y demas atributos  -->
+    <h1>Promociones por tiempo limitado</h1>
+
+    <?php foreach ($resultadosQuery as $resultado) : ?>
     <div class="promocion">
-        <img src=img/navaja.jpg alt="promo2">
-        <h2>Navaja de afeitar</h2>
-        <p><strong>Descripción:</strong>Navaja de afeitar de marca generica</p>
-        <p><strong>Fecha de Inicio:</strong> 01-01-2024</p>
-        <p><strong>Fecha de Fin:</strong> 01-03-2024</p>
-        <p><strong>Descuento:</strong> 20%</p>
-        <p><strong>Condiciones:</strong> Promocion aplica al llevar 2 o mas articulos</p>
+        <img src= <?php echo $resultado['Imagen'] ;?> alt="promo1">
+        <h2><?php echo $resultado['NombrePromocion'] ;?></h2> 
+        <p><strong>Descripción:</strong><?php echo $resultado['Descripcion'] ;?></p>
+        <p><strong>Fecha de Inicio:</strong> <?php echo $resultado['FechaInicio'] ;?></p>
+        <p><strong>Fecha de Fin:</strong> <?php echo $resultado['FechaFin'] ;?></p>
+        <p><strong>Descuento:</strong><?php echo $resultado['Descuento'] ;?> %</p>
+        <p><strong>Condiciones:</strong><?php echo $resultado['Condiciones'] ;?></p>
     </div>
+    <?php endforeach; ?>
