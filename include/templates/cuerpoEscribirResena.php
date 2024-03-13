@@ -1,7 +1,22 @@
-<label for="servicio_producto">Servicio o Producto:</label><br>
-<input type="text" id="servicio_producto" name="servicio_producto" required><br><br>
+<?php
+require_once "DAL/resenas.php";
 
-<label for="experiencia">Experiencia:</label><br>
+$query = "SELECT * FROM estilistas";
+
+$resultadosQuery = getArray($query);
+?>
+
+<label for="titulo">Titulo:</label><br>
+<input type="text" id="titulo" name="titulo" required><br><br>
+
+<label for="nombre">Quien fue su Estilista:</label><br>
+<select id="nombre" name="nombre">
+    <?php foreach ($resultadosQuery as $resultado) : ?>
+        <option value="$resultado['Nombre'] . ' ' . $resultado['Apellido']"><?php echo $resultado['Nombre'] . ' ' . $resultado['Apellido'] ?></option>
+    <?php endforeach; ?>
+</select><br><br>
+
+<label for="experiencia">Describa su Experiencia:</label><br>
 <textarea id="experiencia" name="experiencia" rows="4" cols="50" required></textarea><br><br>
 
 <label for="puntuacion">Puntuación de Satisfacción:</label><br>

@@ -2,6 +2,10 @@
 require_once "include/templates/head.php"
 ?>
 <body>
+
+<div class="links">
+        <a href="resenas.php">Volver</a>
+    </div>
     
 <h1>Formulario de Reseñas</h1>
 

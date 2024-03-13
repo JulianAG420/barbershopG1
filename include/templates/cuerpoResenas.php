@@ -2,7 +2,7 @@
 require_once "DAL/resenas.php";
 
 
-$query = "SELECT * FROM comentariosvaloraciones";
+$query = "SELECT * FROM comentariosvaloraciones INNER JOIN estilistas ON comentariosvaloraciones.EstilistaID = estilistas.EstilistaID";
 
 $resultadosQuery = getArray($query);
 
@@ -26,10 +26,10 @@ $resultadosQuery = getArray($query);
     <div class="rating"> <?php echo $resultado['Calificacion'] ;?> </div>
     <div class="content">
 
-      <h3> <?php echo $resultado['Titulo'] ;?> </h3>
-
-      <p> <?php echo $resultado['Comentario'] ;?> </p>
-      <p> <?php echo $resultado['Fecha'] ;?> </p>
+      <h3> Titulo: <?php echo $resultado['Titulo'] ;?> </h3>
+      <p> Estilista: <?php echo $resultado['Nombre'] . $resultado['Apellido'];?> </p>
+      <p> Descripcion:  <?php echo $resultado['Comentario'] ;?> </p>
+      <p> Fecha del servicio: <?php echo $resultado['Fecha'] ;?> </p>
     </div>
   </div>
   <?php endforeach; ?>
