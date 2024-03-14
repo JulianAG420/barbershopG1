@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 </ul>
     <form method="POST">
         <?php require_once "include/templates/cuerpoCrearCuenta.php";?>
-        <button type="submit">Crear Cuenta</button>
+        <button  class="boton-verde" type="submit">Crear Cuenta</button>
     </form>
 </main>
 

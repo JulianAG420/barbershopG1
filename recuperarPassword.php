@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 </ul>
     <form method="POST">
         <?php require_once "include/templates/cuerpoRecuperarPassword.php";?>
-        <button type="submit">Recuperar Password</button>
+        <button class="boton-verde" type="submit">Recuperar Password</button>
     </form>
 </main>
 
