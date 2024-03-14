@@ -20,7 +20,7 @@ $resultadosQuery = getArray($query);
     </div>
 
     <!--promociones con descripcion y demas atributos  -->
-    <h1>Promociones por tiempo limitado</h1>
+    <h1>Promociones por Tiempo Limitado Solo en Nuestra Tienda Fisica</h1>
 
     <?php foreach ($resultadosQuery as $resultado) : ?>
     <div class="promocion">

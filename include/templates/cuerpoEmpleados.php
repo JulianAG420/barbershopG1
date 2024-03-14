@@ -24,7 +24,7 @@ $resultadosQuery = getArray($query);
 
     <?php foreach ($resultadosQuery as $resultado) : ?>
         <div class="estilista">
-            <img src="<?php echo $resultado['imagen']; ?>" alt="Foto de Estilista 1">
+            <img src="img/<?php echo $resultado['imagen']; ?>" alt="Foto de Estilista 1">
             <div>
                 <p><strong>Nombre:</strong> <?php echo $resultado['Nombre']; ?> </p>
                 <p><strong>Apellido:</strong> <?php echo $resultado['Apellido']; ?> </p>

@@ -20,7 +20,7 @@ $resultadosQuery = getArray($query);
         <a href="promociones.php">Promociones</a>
     </div>
 
-    <h1>Productos a la Venta</h1>
+    <h1>Productos a la Venta en la Tienda</h1>
     <table>
         <tr>
             <th> Producto</th>
