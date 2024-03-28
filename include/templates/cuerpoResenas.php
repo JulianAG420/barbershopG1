@@ -27,7 +27,7 @@ $resultadosQuery = getArray($query);
     <div class="content">
 
       <h3> Titulo: <?php echo $resultado['Titulo'] ;?> </h3>
-      <p> Estilista: <?php echo $resultado['Nombre'] . $resultado['Apellido'];?> </p>
+      <p> Estilista: <?php echo $resultado['Nombre'] . " " . $resultado['Apellido'];?> </p>
       <p> Descripcion:  <?php echo $resultado['Comentario'] ;?> </p>
       <p> Fecha del servicio: <?php echo $resultado['Fecha'] ;?> </p>
     </div>

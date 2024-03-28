@@ -8,16 +8,16 @@
             $nConexion = Conectar();
     
             if(mysqli_set_charset($nConexion, "utf8")){
-                $stmt = $nConexion->prepare("INSERT INTO comentariosvaloraciones (ClienteId, Fecha, EstilistaId, Calificacion, Comentario, Titulo) VALUES (?, ?, ?, ?, ?, ?)");
-                $stmt->bind_param("sssss", $pClienteId, $pFecha, $pEstilistaId, $pCalificacion, $pComentario, $pTitulo);
+                $stmt = $nConexion->prepare("INSERT INTO comentariosvaloraciones (clienteId, fecha, estilistaId, calificacion, comentario, titulo) VALUES (?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("ssssss", $pClienteId, $pFecha, $pEstilistaId, $pCalificacion, $pComentario, $pTitulo);
     
                 // set parametros y luego ejecutar
-                $bClienteId = $pClienteId;
-                $bFecha = $pFecha;
-                $bEstilistaId = $pEstilistaId;
-                $bCalificacion = $pCalificacion;
-                $bComentario = $pComentario;
-                $bTitulo = $pTitulo;
+                $pClienteId = $bClienteId;
+                $pFecha = $bFecha;
+                $pEstilistaId = $bEstilistaId;
+                $pCalificacion = $bCalificacion;
+                $pComentario = $bComentario;
+                $pTitulo = $bTitulo;
                 
                 if ($stmt->execute()){
                     $retorno = true;
@@ -45,6 +45,31 @@
     
                 while ($row = mysqli_fetch_array($result)) {
                     $retorno[] = $row;
+                }
+            }
+    
+        } catch (\Throwable $th) {
+            echo $th;
+        }finally{
+            Desconectar($nConexion);
+        }
+    
+        return $retorno;
+    }
+
+    function getObject($sql) {
+        try {
+            $nConexion = Conectar();
+    
+            // formato de datos utf8
+            if(mysqli_set_charset($nConexion, "utf8")){
+    
+                if(!$result = mysqli_query($nConexion, $sql)) die();  //cancela la ejecución
+    
+                $retorno = null;
+    
+                while ($row = mysqli_fetch_array($result)) {
+                    $retorno = $row;
                 }
             }
     

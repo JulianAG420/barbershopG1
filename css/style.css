@@ -404,3 +404,156 @@ background-color: #ddd;
         color: var(--blanco);
     }
 }
+
+/*Servicios*/
+.listado-servicios{
+    display: grid;
+    gap: 2rem;
+
+    @media (min-width: 768px){
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .servicio{
+        background-color: var(--blanco);
+        padding: 2rem;
+        border-radius: 2rem;
+        transition-property: transform;
+        transition: 300ms;
+        text-align: center;
+
+        &.seleccionado{
+            background-color: var(--secundario);
+
+            p{
+                color: var(--blanco);
+            }
+
+            &:hover{   
+                .precio-servicio{
+                    color: var(--blanco);
+                }
+            }
+
+        }
+
+        &:hover{
+            transform: scale(1.1);
+            box-shadow: 1rem 2rem 3rem #1b1a1a;
+            cursor: pointer;
+
+            .precio-servicio{
+                color: red;
+            }
+        }
+
+        p{
+            color: black;
+            margin: 0 0 calc(2rem/ 4) 0;
+        }
+
+        .precio-servicio{
+            color: var(--secundario);
+            font-weight: bold;
+            font-size: 3rem;
+            margin: 0;
+        }
+    }
+}
+
+.seccion{
+
+    padding: 5rem 0;
+    display: none;
+
+    .text-center{
+        text-align: center;
+    }
+
+}
+
+.mostrar{
+    display: block;
+}
+
+.ocultar{
+    display: none;
+}
+
+/*Resumen*/
+
+.contenido-resumen{
+
+    p{
+        margin-bottom: 1rem;
+    }
+
+    span{
+        color: var(--blanco);
+        font-family: bold;
+        font-size: 2.4rem;
+    }
+
+}
+
+.contenedor-servicio{
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+
+    &:last-of-type{
+        margin-bottom: 2rem;
+    }
+
+}
+
+/*Alertas*/
+.alerta{
+    padding: calc(2rem / 4);
+    color: var(--blanco);
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &.error{
+        background-color: red;
+    }
+    &.exito{
+        background-color: #28a745;
+    }
+}
+
+/*TABS*/
+.tabs{
+
+    @media (min-width: 768px){
+        display: flex;
+    }
+
+    button{
+        display: block;
+        margin-bottom: 1rem;
+        width: 100%;
+        padding: 1rem;
+        background-color: #28a745;
+        color: var(--blanco);
+        text-transform: uppercase;
+        border: none;
+        font-weight: bold;
+        transition: background-color 400ms ease-in-out;
+
+        &:hover{
+            cursor: pointer;
+            background-color: darken(var(--primario), 10%);
+        }
+
+        &.actual{
+            background-color: var(--blanco);
+            color: var(--primario);
+        }
+    }
+
+}

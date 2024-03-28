@@ -21,7 +21,7 @@
             <h2>Sección de Reseñas</h2>
         </a>
 
-        <a href="citas.php" class="section-link">
+        <a href="servicios.php" class="section-link">
             <h2>Sección de Servicios y Agendar Citas</h2>
         </a>
 

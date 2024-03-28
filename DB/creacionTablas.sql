@@ -20,10 +20,9 @@ CREATE TABLE Clientes (
 -- Tabla Citas
 CREATE TABLE Citas (
     CitaID INT PRIMARY KEY AUTO_INCREMENT,
-    FechaHora DATETIME,
     ClienteID INT,
-    Estado ENUM('pendiente', 'confirmada', 'completada', 'cancelada'),
-    Notas VARCHAR(255),
+    Fecha DATE,
+    Hora TIME,
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID)
 );
 

@@ -4,15 +4,18 @@ require_once "DAL/resenas.php";
 $query = "SELECT * FROM estilistas";
 
 $resultadosQuery = getArray($query);
+
+
 ?>
 
 <label for="titulo">Titulo:</label><br>
 <input type="text" id="titulo" name="titulo" required><br><br>
 
-<label for="nombre">Quien fue su Estilista:</label><br>
-<select id="nombre" name="nombre">
+<label for="idEstilista">Quien fue su Estilista:</label><br>
+<select id="idEstilista" name="idEstilista" required>
+    <option value="">Seleccionar Estilista</option>
     <?php foreach ($resultadosQuery as $resultado) : ?>
-        <option value="$resultado['Nombre'] . ' ' . $resultado['Apellido']"><?php echo $resultado['Nombre'] . ' ' . $resultado['Apellido'] ?></option>
+        <option value="<?php echo $resultado['EstilistaID']; ?>"> <?php echo $resultado['Nombre'] . ' ' . $resultado['Apellido']; ?> </option>
     <?php endforeach; ?>
 </select><br><br>
 
