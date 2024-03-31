@@ -84,12 +84,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 </ul>
     <form method="POST">
         <?php require_once "include/templates/cuerpoCrearCuenta.php";?>
-        <button  class="boton-verde" type="submit">Crear Cuenta</button>
+        <button  class="boton-azul" type="submit">Crear Cuenta</button>
     </form>
 </main>
 
 <div>
-    <a href="login.php">Regresar al Menu de Login</a>
+    <a class="boton" href="login.php">Regresar al Menu de Login</a>
 </div>
 
 <?php

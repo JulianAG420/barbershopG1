@@ -226,6 +226,8 @@ input[type="text"],
 textarea,
 input[type="number"],
 input[type="date"],
+input[type="email"],
+input[type="password"],
 input[type="submit"] {
     width: calc(100% - 22px); 
     padding: 10px;

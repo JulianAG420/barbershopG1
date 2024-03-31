@@ -64,12 +64,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 </ul>
     <form method="POST">
         <?php require_once "include/templates/cuerpoRecuperarPassword.php";?>
-        <button class="boton-verde" type="submit">Recuperar Password</button>
+        <button class="boton-azul" type="submit">Recuperar Password</button>
     </form>
 </main>
 
 <div>
-    <a href="login.php">Regresar al Menu de Login</a>
+    <a class="boton" href="login.php">Regresar al Menu de Login</a>
 </div>
 
 <?php
