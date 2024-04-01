@@ -56,19 +56,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['tipoAcceso'] = $sesionAbiertaCliente['accesousuarioid'];
                 $_SESSION['login'] = TRUE;
                 header("Location: index.php?cliente&id={$_SESSION['id']}");
-            }elseif($authAdmin){
+            } elseif ($authAdmin) {
                 session_start();
                 $_SESSION['usuario'] = $sesionAbiertaAdmin['email'];
                 $_SESSION['id'] = $sesionAbiertaAdmin['usuarioid'];
                 $_SESSION['tipoAcceso'] = $sesionAbiertaAdmin['accesousuarioid'];
                 $_SESSION['login'] = TRUE;
                 header("Location: index.php?admin&id={$_SESSION['id']}");
-            }
-            else{
+            } else {
                 $errores[] = "Contraseña Incorrecta";
-                
             }
-        }else{
+        } else {
             $errores[] = "El Usuario no Existe";
         }
     }
@@ -96,17 +94,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </main>
 
-        <div style="margin-top: 2rem; margin-right: 30rem;" class="contenedor">
+    <div style="margin-top: 2rem; margin-right: 40; text-align: center;" class="contenedor">
+        <a class="boton" href="crearCuenta.php">Registrarse</a>
+    </div>
 
-            <a class="boton" href="crearCuenta.php">Registrarse</a>
-        </div>
+    <div style="margin-top: 4rem; margin-right: 40; text-align: center;" class="contenedor">
+        <a class="boton" href="recuperarPassword.php">Restaurar Contraseña</a>
+    </div>
 
-        <div style="margin-top: 2rem; margin-right: 30rem;" class="contenedor">
 
-            <a class="boton" href="recuperarPassword.php">Restaurar Contraseña</a>
-        </div>
-
-    
-<?php
+    <?php
     include "include/templates/footer.php";
-?>
+    ?>

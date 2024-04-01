@@ -6,7 +6,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2024 at 06:48 AM
+-- Generation Time: Apr 01, 2024 at 07:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -336,19 +336,10 @@ INSERT INTO `usuarios` (`UsuarioID`, `Email`, `Pass_word`, `AccesoUsuarioID`, `N
 CREATE TABLE `ventas` (
   `VentaID` int(11) NOT NULL,
   `FechaHoraVenta` datetime DEFAULT NULL,
-  `ClienteID` int(11) DEFAULT NULL,
   `TotalVenta` decimal(10,2) DEFAULT NULL,
   `MetodoPago` varchar(50) DEFAULT '',
-  `EstilistaID` int(11) DEFAULT NULL,
   `Descripcion` varchar(255) DEFAULT 'YES'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `ventas`
---
-
-INSERT INTO `ventas` (`VentaID`, `FechaHoraVenta`, `ClienteID`, `TotalVenta`, `MetodoPago`, `EstilistaID`, `Descripcion`) VALUES
-(1, NULL, NULL, NULL, NULL, NULL, 'YES');
 
 --
 -- Indexes for dumped tables
@@ -438,9 +429,7 @@ ALTER TABLE `usuarios`
 -- Indexes for table `ventas`
 --
 ALTER TABLE `ventas`
-  ADD PRIMARY KEY (`VentaID`),
-  ADD KEY `ClienteID` (`ClienteID`),
-  ADD KEY `EstilistaID` (`EstilistaID`);
+  ADD PRIMARY KEY (`VentaID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -565,13 +554,6 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`AccesoUsuarioID`) REFERENCES `accesousuario` (`AccesoUsuarioID`);
-
---
--- Constraints for table `ventas`
---
-ALTER TABLE `ventas`
-  ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`ClienteID`) REFERENCES `clientes` (`ClienteID`),
-  ADD CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`EstilistaID`) REFERENCES `estilistas` (`EstilistaID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
