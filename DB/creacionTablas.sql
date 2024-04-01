@@ -6,7 +6,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2024 at 07:20 AM
+-- Generation Time: Apr 01, 2024 at 08:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -258,31 +258,6 @@ INSERT INTO `productos` (`ProductoID`, `CategoriaID`, `Nombre`, `Descripcion`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `promociones`
---
-
-CREATE TABLE `promociones` (
-  `PromocionID` int(11) NOT NULL,
-  `NombrePromocion` varchar(100) DEFAULT NULL,
-  `Descripcion` varchar(255) DEFAULT NULL,
-  `FechaInicio` date DEFAULT NULL,
-  `FechaFin` date DEFAULT NULL,
-  `Descuento` decimal(5,2) DEFAULT NULL,
-  `Condiciones` varchar(255) DEFAULT NULL,
-  `Imagen` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `promociones`
---
-
-INSERT INTO `promociones` (`PromocionID`, `NombrePromocion`, `Descripcion`, `FechaInicio`, `FechaFin`, `Descuento`, `Condiciones`, `Imagen`) VALUES
-(1, 'Espuma Nivea', 'Espuma de afeitar Nivea men para todo tipo de piel', '2024-01-01', '2024-02-01', 10.00, 'Promocion aplica al pagar con tarjeta amex black', 'img/espuma.jpg'),
-(2, 'Navaja de afeitar', 'Navaja de afeitar de marca generica', '2024-01-01', '2024-02-01', 20.00, 'Promocion aplica al llevar 2 o mas articulos', 'img/navaja.jpg');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `servicios`
 --
 
@@ -338,7 +313,8 @@ CREATE TABLE `ventas` (
   `FechaHoraVenta` datetime DEFAULT NULL,
   `TotalVenta` decimal(10,2) DEFAULT NULL,
   `MetodoPago` varchar(50) DEFAULT '',
-  `Descripcion` varchar(255) DEFAULT 'YES'
+  `Descripcion` varchar(255) DEFAULT 'YES',
+  `ClienteID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -407,12 +383,6 @@ ALTER TABLE `productos`
   ADD KEY `CategoriaID` (`CategoriaID`);
 
 --
--- Indexes for table `promociones`
---
-ALTER TABLE `promociones`
-  ADD PRIMARY KEY (`PromocionID`);
-
---
 -- Indexes for table `servicios`
 --
 ALTER TABLE `servicios`
@@ -429,7 +399,8 @@ ALTER TABLE `usuarios`
 -- Indexes for table `ventas`
 --
 ALTER TABLE `ventas`
-  ADD PRIMARY KEY (`VentaID`);
+  ADD PRIMARY KEY (`VentaID`),
+  ADD KEY `ClienteID` (`ClienteID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -482,12 +453,6 @@ ALTER TABLE `estilistas`
 --
 ALTER TABLE `productos`
   MODIFY `ProductoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `promociones`
---
-ALTER TABLE `promociones`
-  MODIFY `PromocionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `servicios`
@@ -554,6 +519,12 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`AccesoUsuarioID`) REFERENCES `accesousuario` (`AccesoUsuarioID`);
+
+--
+-- Constraints for table `ventas`
+--
+ALTER TABLE `ventas`
+  ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`ClienteID`) REFERENCES `clientes` (`ClienteID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
