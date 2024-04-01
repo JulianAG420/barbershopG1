@@ -12,11 +12,11 @@
             <h2>Registrar Ingresos</h2>
         </a>
 
-        <a href="#" class="section-link">
+        <a href="IngresarEstilista.php" class="section-link">
             <h2>Ingresar Estilista</h2>
         </a>
 
-        <a href="#" class="section-link">
+        <a href="ModificarEstilista.php" class="section-link">
             <h2>Modificar Estilista</h2>
         </a>
 
@@ -24,7 +24,7 @@
             <h2>Modificar Inventario</h2>
         </a>
 
-        <a href="#" class="section-link">
+        <a href="ModificarPrecioArticulo.php" class="section-link">
             <h2>Modificar Precio Articulo</h2>
         </a>
     </div>
