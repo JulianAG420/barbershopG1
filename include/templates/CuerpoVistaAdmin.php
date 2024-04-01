@@ -8,7 +8,7 @@
     </div>
 
     <div class="section-links">
-        <a href="#" class="section-link">
+        <a href="RegistrarIngresos.php" class="section-link">
             <h2>Registrar Ingresos</h2>
         </a>
 
@@ -20,7 +20,7 @@
             <h2>Modificar Estilista</h2>
         </a>
 
-        <a href="#" class="section-link">
+        <a href="ModificarInventario.php" class="section-link">
             <h2>Modificar Inventario</h2>
         </a>
 

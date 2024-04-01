@@ -18,10 +18,10 @@ $resultadosQuery = getArray($query);
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="VistaAdmin.php">Home</a>
-        <a class="nav-link" href="#">Registrar Ingresos</a>
+        <a class="nav-link" href="RegistrarIngresos.php">Registrar Ingresos</a>
         <a class="nav-link" href="IngresarEstilista.php">Ingresar Estilista</a>
-        <a class="nav-link" href="#">Modificar Inventario</a>
-        <a class="nav-link" href="#">Modificar Precio Articulo</a>
+        <a class="nav-link" href="ModificarInventario.php">Modificar Inventario</a>
+        <a class="nav-link" href="ModificarPrecioArticulo.php">Modificar Precio Articulo</a>
         <a class="nav-link disabled" aria-disabled="true">Modificar Estilista</a>
       </div>
     </div>

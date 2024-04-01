@@ -10,6 +10,7 @@ $resultadosQuery = getArray($query);
 //var_dump($resultadosQuery);
 
 ?>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,8 +22,8 @@ $resultadosQuery = getArray($query);
         <a class="nav-link" href="RegistrarIngresos.php">Registrar Ingresos</a>
         <a class="nav-link" href="IngresarEstilista.php">Ingresar Estilista</a>
         <a class="nav-link" href="ModificarEstilista.php">Modificar Estilista</a>
-        <a class="nav-link" href="ModificarInventario.php">Modificar Inventario</a>
-        <a class="nav-link disabled" aria-disabled="true">Modificar Precio Articulo</a>
+        <a class="nav-link" href="ModificarPrecioArticulo.php">Modificar Precio Articulo</a>
+        <a class="nav-link disabled" aria-disabled="true">Modificar Inventario</a>
       </div>
     </div>
   </div>
@@ -32,12 +33,12 @@ $resultadosQuery = getArray($query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Precio de Producto</title>
+    <title>Modificar Inventario de Producto</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Modificar Precio de Producto</h1>
+        <h1>Modificar Inventario de Producto</h1>
         <form action="" method="POST">
             <div class="form-group">
                 <label for="producto">Producto:</label>
@@ -48,10 +49,10 @@ $resultadosQuery = getArray($query);
                 </select>
             </div>
             <div class="form-group">
-                <label for="nuevo_precio">Nuevo Precio (₡):</label>
-                <input type="number" class="form-control" id="nuevo_precio" name="nuevo_precio" min="0" step="100.0" required>
+                <label for="nuevo_inventario">Actualizar Inventario :</label>
+                <input type="number" class="form-control" id="nuevo_precio" name="nuevo_inventario" min="0" step="1.0" required>
             </div>
-            <button type="submit" class="btn btn-primary">Actualizar Precio</button>
+            <button type="submit" class="btn btn-primary">Actualizar Inventario</button>
         </form>
     </div>
 </body>
