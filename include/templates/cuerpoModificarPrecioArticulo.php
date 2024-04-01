@@ -2,7 +2,7 @@
 require_once "DAL/empleados.php";
 
 
-$query = "SELECT productos.Nombre, productos.Descripcion, productos.PrecioVenta, productos.Imagen, inventario.CantidadStock FROM productos 
+$query = "SELECT productos.ProductoID, productos.Nombre, productos.Descripcion, productos.PrecioVenta, productos.Imagen, inventario.CantidadStock FROM productos 
 INNER JOIN inventario ON productos.ProductoID = inventario.ProductoID"; 
 
 $resultadosQuery = getArray($query);
