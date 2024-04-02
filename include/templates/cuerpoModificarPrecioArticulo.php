@@ -7,35 +7,57 @@ INNER JOIN inventario ON productos.ProductoID = inventario.ProductoID";
 
 $resultadosQuery = getArray($query);
 
-//var_dump($resultadosQuery);
+
+$errores = array();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+  require_once "include/functions/recoge.php";
+
+  $Product = recogePost("producto");
+  $nuevo_precio = recogePost("nuevo_precio");
+
+  $nuevo_precioOk = false;
+
+  if ($nuevo_precio == ""){
+
+    $errores[] = "Debe llenar todos los campos";
+
+  } else if (!is_numeric($nuevo_precio)) {
+    $errores[] = "Solo se acepta valores númericos";
+  } 
+  else{
+    $nuevo_precioOk = true;
+  }
+  
+  
+  if ($nuevo_precioOk){
+
+      if(ActualizarPrecio($Product, $nuevo_precio)){
+          
+        header("Location: VistaAdmin.php");
+         
+      }else{
+          $errores[] = "Ocurrió un error al ingresar el dato a base de datos";
+      }
+  }
+}
+
 
 ?>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="VistaAdmin.php">Home</a>
-        <a class="nav-link" href="RegistrarIngresos.php">Registrar Ingresos</a>
-        <a class="nav-link" href="IngresarEstilista.php">Ingresar Estilista</a>
-        <a class="nav-link" href="ModificarEstilista.php">Modificar Estilista</a>
-        <a class="nav-link" href="ModificarInventario.php">Modificar Inventario</a>
-        <a class="nav-link disabled" aria-disabled="true">Modificar Precio Articulo</a>
-      </div>
-    </div>
-  </div>
-</nav>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Precio de Producto</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+
+
+
 <body>
+
+    <ul>
+        <?php
+        foreach ($errores as $error) {
+            echo "<li class='error'>$error</li>";
+        }
+        ?>
+    </ul>
+
     <div class="container">
         <h1>Modificar Precio de Producto</h1>
         <form action="" method="POST">
@@ -49,7 +71,7 @@ $resultadosQuery = getArray($query);
             </div>
             <div class="form-group">
                 <label for="nuevo_precio">Nuevo Precio (₡):</label>
-                <input type="number" class="form-control" id="nuevo_precio" name="nuevo_precio" min="0" step="100.0" required>
+                <input type="text" class="form-control" id="nuevo_precio" name="nuevo_precio" min="0" step="100.0">
             </div>
             <button type="submit" class="btn btn-primary">Actualizar Precio</button>
         </form>

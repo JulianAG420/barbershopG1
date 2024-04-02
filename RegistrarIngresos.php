@@ -1,9 +1,9 @@
 <?php
-require_once "include/templates/head.php";
+require_once "include/templates/headAdmin.php";
 ?>
 
 <?php
-require "include/templates/cuerpoRegistrarIngresos.php";
+require "include/templates/cuerpoIngresarVentas.php";
 ?>
 
 <?php

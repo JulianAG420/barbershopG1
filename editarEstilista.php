@@ -1,9 +1,12 @@
-
 <?php
-
+require_once "include/templates/headAdmin.php";
 require_once "DAL/empleados.php";
 
-$imagen = 'default.png';
+$id = $_GET['id'];
+
+$query = "SELECT * FROM estilistas WHERE EstilistaID = $id";
+
+$resultadosQuery = getArray($query);
 
 
 $errores = array();
@@ -56,12 +59,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $contactoOk = true;
   }
   
+  
   if ($nombreOk && $apellidoOk && $especialidadesOk && $horarioOk && $contactoOk) {
-     
-      if(AgregarEstilista($nombre, $apellido, $especialidades, $horario, $contacto, $imagen)){
+      
+      if(ActualizarEstilista($nombre, $apellido, $especialidades, $horario, $contacto, $id)){
           
         header("Location: VistaAdmin.php");
         
+         
       }else{
         $errores[] = "Ocurrió un error al ingresar el dato a base de datos";
       }
@@ -71,8 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 ?>
 
-
-<body>
+<main>
 
     <ul>
         <?php
@@ -82,8 +86,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         ?>
     </ul>
 
+    <h1>Editar un Estilista</h1>
+
+    <?php foreach ($resultadosQuery as $resultado) : ?>
+        <form method="POST">
+        <div class="estilista" id="estilista-<?php echo $resultado['EstilistaID']; ?>">
+            <img src="img/<?php echo $resultado['imagen']; ?>" alt="Foto de Estilista <?php echo $resultado['EstilistaID']; ?>">
+            <div>
+                <p><strong>ID:</strong> <?php echo $resultado['EstilistaID']; ?> </p>
+                <p><strong>Nombre:</strong> <?php echo $resultado['Nombre']; ?> </p>
+                <p><strong>Apellido:</strong> <?php echo $resultado['Apellido']; ?> </p>
+                <p><strong>Especialidades:</strong> <?php echo $resultado['Especialidades']; ?> </p>
+                <p><strong>Horario de Trabajo:</strong> <?php echo $resultado['HorarioTrabajo']; ?> </p>
+                <p><strong>Contacto:</strong> <?php echo $resultado['Contacto']; ?> </p>
+            </div>
+        </div>
+        </form>
+    <?php endforeach; ?>
+
     <div class="container">
-        <h1>Agregar Estilista</h1>
         <form action="" method="POST">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
@@ -105,8 +126,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <label for="contacto">Contacto:</label>
                 <input type="text" class="form-control" id="contacto" name="contacto">
             </div>
-            <button type="submit" class="btn btn-primary">Agregar Estilista</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>
     </div>
-</body>
-</html>
+
+</main>
+
+
+
+<?php
+include_once "include/templates/footer.php";
+?>
