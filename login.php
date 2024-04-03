@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <header>
         <div>
-            <h1>Login</h1>
+            <h1>Inicio de Sesion</h1>
         </div>
     </header>
 
