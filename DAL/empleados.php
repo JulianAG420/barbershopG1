@@ -114,7 +114,7 @@
 
 
 
-    function ActualizarEstilista($pnombre, $papellido, $pespecialidades, $phorario, $pcontacto, $pid) {
+    function ActualizarEstilista($pnombre, $papellido, $pespecialidades, $phorario, $pcontacto, $pimagen, $pid) {
         $retorno = false;
     
         try {
@@ -122,15 +122,16 @@
     
             // formato de datos utf8
             if(mysqli_set_charset($oConexion, "utf8")){      
-                $stmt = $oConexion->prepare("update estilistas set Nombre = ?, Apellido = ?, Especialidades = ?, HorarioTrabajo = ?, Contacto = ? where EstilistaID = ?");
+                $stmt = $oConexion->prepare("update estilistas set Nombre = ?, Apellido = ?, Especialidades = ?, HorarioTrabajo = ?, Contacto = ?, imagen = ? where EstilistaID = ?");
 
-                $stmt->bind_param("sssssi", $inombre, $iapellido, $iespecialidades, $ihorario, $icontacto, $iid);
+                $stmt->bind_param("ssssssi", $inombre, $iapellido, $iespecialidades, $ihorario, $icontacto, $iimagen, $iid);
                 
                 $inombre = $pnombre;
                 $iapellido = $papellido;
                 $iespecialidades = $pespecialidades;
                 $ihorario = $phorario;
                 $icontacto = $pcontacto;
+                $iimagen = $pimagen;
                 $iid = $pid;
 
               

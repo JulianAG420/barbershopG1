@@ -1,12 +1,14 @@
 <?php
 require_once "DAL/empleados.php";
 
-$imagen = 'default.png';
-
 $errores = array();
 $mensaje = ""; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    $imagen=$_FILES['archivo']['name'];
+    $guardado=$_FILES['archivo']['tmp_name'];
+
     require_once "include/functions/recoge.php";
     $nombre = recogePost("nombre");
     $apellido = recogePost("apellido");
@@ -19,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $especialidadesOk = false;
     $horarioOk        = false;
     $contactoOk       = false;
+    $imagenOk         = false;
 
     if ($nombre == "" || !preg_match("/^[a-zA-Z ]*$/",$nombre)){
         $errores[] = "No se digitó el nombre o contiene caracteres no válidos";
@@ -49,8 +52,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     }else{
         $contactoOk = true;
     }
+
+
+    if(!file_exists('archivos')){
+	    mkdir('archivos',0777,true);
+	    if(file_exists('archivos')){
+		    if(move_uploaded_file($guardado, 'img/'.$imagen)){
+			    //Archivo guardado con exito
+                $imagenOk = true;
+		    }else{
+			    $errores[] = "La imagen no existe";
+		    }
+	    }
+    }else{
+	    if(move_uploaded_file($guardado, 'img/'.$imagen)){
+		    //Archivo guardado con exito
+            $imagenOk = true;
+	    }else{
+		    $errores[] = "Agrega una imagen!";
+	    }
+    }
+
   
-    if ($nombreOk && $apellidoOk && $especialidadesOk && $horarioOk && $contactoOk) {
+    if ($nombreOk && $apellidoOk && $especialidadesOk && $horarioOk && $contactoOk && $imagenOk) {
         if(AgregarEstilista($nombre, $apellido, $especialidades, $horario, $contacto, $imagen)){
             $mensaje = "El estilista se agregó exitosamente.";
         }else{
@@ -77,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     </ul>
 
     <h1>Agregar Estilista</h1>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input type="text" class="form-control" id="nombre" name="nombre">
@@ -98,9 +122,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <label for="contacto">Contacto:</label>
             <input type="text" class="form-control" id="contacto" name="contacto">
         </div>
+
+        <div class="form-group">
+              <input type="file" name="archivo" accept=".jpg, .png">
+              <br><br>
+        </div>
         <button type="submit" class="btn btn-primary">Agregar Estilista</button>
     </form>
 </div>
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>

@@ -9,6 +9,9 @@ $errores = array();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once "include/functions/recoge.php";
+
+    
+    $imagen = recogePost("imagen");
     $id = recogePost("id");
 
     if ($id == "") {
@@ -19,8 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
 
         if (EliminarEstilista($id)) {
-            
+
+            $nombre_archivo = 'img/'.$imagen;
+            unlink($nombre_archivo);
             header("Location: VistaAdmin.php");
+            
         } else {
             $errores[] = "Ocurrió un error al eliminar un estilista";
         }
@@ -57,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="action-buttons">
                     <a class="btn btn-warning" href="editarEstilista.php?id=<?php echo $resultado['EstilistaID']; ?>">Editar</a>
                     <input type="text" name="id" hidden value="<?= $resultado['EstilistaID'] ?>">
+                    <input type="hidden" name="imagen" value="<?php echo $resultado['imagen']; ?>">
                     <button class="btn btn-danger botones" type="submit">Eliminar</button> 
                 </div>
             </div>
