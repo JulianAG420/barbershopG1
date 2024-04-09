@@ -1,5 +1,5 @@
 <?php
-require_once "DAL/empleados.php";
+require_once "DAL/servicios.php";
 
 
 $query = "SELECT productos.Nombre, productos.Descripcion, productos.PrecioVenta, productos.Imagen, inventario.CantidadStock FROM productos 
