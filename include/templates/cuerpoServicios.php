@@ -34,13 +34,6 @@ $resultadosQuery = getObject($query);
 //var_dump($resultadosQuery);
 
 ?>
-<div class="links">
-    <a href="index.php">Menu Principal</a>
-    <a href="empleados.php">Estilistas</a>
-    <a href="resenas.php">Reseñas</a>
-    <a href="promociones.php">Promociones</a>
-    <a href="productos.php">Productos</a>
-</div>
 
 <h1 class="nombre-pagina">Crear nueva cita</h1>
 

@@ -9,16 +9,6 @@ $resultadosQuery = getArray($query);
 //var_dump($resultadosQuery);
 
 ?>
-
-
-<body>
-    <div class="links">
-        <a href="index.php">Menu Principal</a>
-        <a href="resenas.php">Reseñas</a>
-        <a href="citas.php">Citas</a>
-        <a href="productos.php">Productos</a>
-        <a href="promociones.php">Promociones</a>
-    </div>
     <!-- estilistas con sus atributos-->
     <h1>Nuestros Estilistas y Horario de la Barbería</h1>
 

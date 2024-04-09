@@ -9,16 +9,6 @@ $resultadosQuery = getArray($query);
 //var_dump($resultadosQuery);
 
 ?>
-
-<body>
-    <div class="links">
-        <a href="index.php">Menu Principal</a>
-        <a href="empleados.php">Estilistas</a>
-        <a href="resenas.php">Reseñas</a>
-        <a href="citas.php">Citas</a>
-        <a href="productos.php">Productos</a>
-    </div>
-
     <!--promociones con descripcion y demas atributos  -->
     <h1>Promociones por Tiempo Limitado Solo en Nuestra Tienda Fisica</h1>
 

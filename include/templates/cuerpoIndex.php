@@ -25,13 +25,10 @@
             <h2>Sección de Servicios y Agendar Citas</h2>
         </a>
 
-        <a href="citasAgendadas.php" class="section-link">
-            <h2>Citas Agendadas</h2>
+        <a href="resumenCitas.php" class="section-link">
+            <h2>Seccion de Resumen de Citas Agendadas</h2>
         </a>
-
-        <a href="promociones.php" class="section-link">
-            <h2>Sección de Promociones</h2>
-        </a>
+        
         <a href="productos.php" class="section-link">
             <h2>Sección de Productos</h2>
         </a>

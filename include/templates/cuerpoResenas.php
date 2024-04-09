@@ -10,14 +10,6 @@ $resultadosQuery = getArray($query);
 
 ?>
 
-<body>
-  <div class="links">
-    <a href="index.php">Menu Principal</a>
-    <a href="empleados.php">Estilistas</a>
-    <a href="citas.php">Citas</a>
-    <a href="productos.php">Productos</a>
-    <a href="promociones.php">Promociones</a>
-  </div>
 
   <h1>Nuestras Reseñas</h1>
   

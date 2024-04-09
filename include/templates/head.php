@@ -14,3 +14,13 @@
     <title>BarberShop</title>
 </head>
 
+<body>
+  <div class="links">
+    <a href="index.php">Menu Principal</a>
+    <a href="empleados.php">Seccion de Estilistas</a>
+    <a href="resenas.php">Seccion de Resenas</a>
+    <a href="citas.php">Seccion de Servicios y Citas</a>
+    <a href="productos.php">Seccion de Resumen de Citas</a>
+    <a href="productos.php">Seccion de Productos</a>
+  </div>
+

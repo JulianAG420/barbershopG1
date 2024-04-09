@@ -11,15 +11,6 @@ $resultadosQuery = getArray($query);
 
 ?>
 
-<body>
-    <div class="links">
-        <a href="index.php">Menu Principal</a>
-        <a href="empleados.php">Estilistas</a>
-        <a href="resenas.php">Reseñas</a>
-        <a href="citas.php">Citas</a>
-        <a href="promociones.php">Promociones</a>
-    </div>
-
     <h1>Productos a la Venta en la Tienda</h1>
     <table>
         <tr>
