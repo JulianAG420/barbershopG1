@@ -1,6 +1,6 @@
 <?php
 $login = true;
-require_once "include/templates/head.php";
+require_once "include/templates/headLogin.php";
 
 //Creacion de un arreglo para almacenar los errores
 $errores = array();
