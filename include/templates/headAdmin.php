@@ -21,12 +21,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="links">
-                    <a class="nav-link active" aria-current="page" href="VistaAdmin.php">Home</a>
-                    <a class="nav-link" href="RegistrarIngresos.php">Registrar Ingresos</a>
-                    <a class="nav-link" href="IngresarEstilista.php">Ingresar Estilista</a>
-                    <a class="nav-link" href="ModificarEstilista.php">Modificar Estilista</a>
-                    <a class="nav-link" href="ModificarPrecioArticulo.php">Modificar Precio Articulo</a>
-                    <a class="nav-link" href="ModificarInventario.php">Modificar Inventario</a>
+                    <a class="nav-link active" aria-current="page" href="VistaAdmin.php">Menu Principal</a>
+                    <a class="nav-link" href="registrarIngresos.php">Registrar Ingresos</a>
+                    <a class="nav-link" href="ingresarEstilista.php">Ingresar Estilista</a>
+                    <a class="nav-link" href="modificarEstilista.php">Modificar Estilista</a>
+                    <a class="nav-link" href="modificarPrecioArticulo.php">Modificar Precio Articulo</a>
+                    <a class="nav-link" href="modificarInventario.php">Modificar Inventario</a>
+                    <a class="nav-link" href="ingresarServicios.php">Ingresar Servicios</a>
+                    <a class="nav-link" href="modificarServicios.php">Modificar Servicios</a>
                 </div>
             </div>
         </div>

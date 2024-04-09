@@ -8,23 +8,31 @@
     </div>
 
     <div class="section-links">
-        <a href="RegistrarIngresos.php" class="section-link">
+        <a href="registrarIngresos.php" class="section-link">
             <h2>Registrar Ingresos</h2>
         </a>
 
-        <a href="IngresarEstilista.php" class="section-link">
+        <a href="ingresarEstilista.php" class="section-link">
             <h2>Ingresar Estilista</h2>
         </a>
 
-        <a href="ModificarEstilista.php" class="section-link">
+        <a href="modificarEstilista.php" class="section-link">
             <h2>Modificar Estilista</h2>
         </a>
 
-        <a href="ModificarInventario.php" class="section-link">
+        <a href="ingresarServicios.php" class="section-link">
+            <h2>Ingresar Servicios</h2>
+        </a>
+
+        <a href="modificarServicios.php" class="section-link">
+            <h2>Modificar Servicios</h2>
+        </a>
+
+        <a href="modificarInventario.php" class="section-link">
             <h2>Modificar Inventario</h2>
         </a>
 
-        <a href="ModificarPrecioArticulo.php" class="section-link">
+        <a href="modificarPrecioArticulo.php" class="section-link">
             <h2>Modificar Precio Articulo</h2>
         </a>
     </div>
