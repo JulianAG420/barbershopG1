@@ -255,3 +255,45 @@
     
         return $retorno;
     }
+
+    function AgregarProductos($pcategoria, $pnombre, $pdescripcion, $pventa, $pimagen, $pcantidad) {
+        $retorno = false;
+    
+        try {
+            $oConexion = Conectar();
+    
+            // formato de datos utf8
+            if(mysqli_set_charset($oConexion, "utf8")){   
+                $stmt = $oConexion->prepare("INSERT INTO productos (CategoriaID, Nombre, Descripcion, PrecioVenta, imagen) VALUES (?, ?, ?, ?, ?)");
+                $stmt->bind_param("issds", $iCategoria, $iNombre, $iDescripcion, $iVenta, $iImagen);
+    
+                $iCategoria = $pcategoria;
+                $iNombre = $pnombre;
+                $iDescripcion = $pdescripcion;
+                $iVenta = $pventa;
+                $iImagen = $pimagen;
+    
+                if ($stmt->execute()){
+                    $productoID = $stmt->insert_id; // Obtiene el ID del producto insertado
+    
+                    $stmtInventario = $oConexion->prepare("INSERT INTO inventario (ProductoID, CantidadStock) VALUES (?, ?)");
+                    $stmtInventario->bind_param("id", $iProductoID, $iCantidad);
+    
+                    $iProductoID = $productoID;
+                    $iCantidad = $pcantidad;
+    
+                    if ($stmtInventario->execute()){
+                        $retorno = true;
+                    }
+                }
+            }
+    
+        } catch (\Throwable $th) {
+            echo $th;
+        }finally{
+            Desconectar($oConexion);
+        }
+    
+        return $retorno;
+    }
+    

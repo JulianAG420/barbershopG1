@@ -1,14 +1,11 @@
--- Creacion de las tablas y su respectiva normalizacion 
--- FORMATO BRINDADO POR PHPMYADMIN PARA QUE LO COPIE Y PEGUE DE UNA MANERA MAS SENCILLA
-
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 01, 2024 at 08:04 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 17-04-2024 a las 06:38:16
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -21,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sistemabarberia`
+-- Base de datos: `sistemabarberia`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `accesousuario`
+-- Estructura de tabla para la tabla `accesousuario`
 --
 
 CREATE TABLE `accesousuario` (
@@ -36,7 +33,7 @@ CREATE TABLE `accesousuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `accesousuario`
+-- Volcado de datos para la tabla `accesousuario`
 --
 
 INSERT INTO `accesousuario` (`AccesoUsuarioID`, `TipoPermiso`) VALUES
@@ -46,7 +43,7 @@ INSERT INTO `accesousuario` (`AccesoUsuarioID`, `TipoPermiso`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorias`
+-- Estructura de tabla para la tabla `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -55,7 +52,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `categorias`
+-- Volcado de datos para la tabla `categorias`
 --
 
 INSERT INTO `categorias` (`CategoriaID`, `NombreCategoria`) VALUES
@@ -66,7 +63,7 @@ INSERT INTO `categorias` (`CategoriaID`, `NombreCategoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `citas`
+-- Estructura de tabla para la tabla `citas`
 --
 
 CREATE TABLE `citas` (
@@ -77,7 +74,7 @@ CREATE TABLE `citas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `citas`
+-- Volcado de datos para la tabla `citas`
 --
 
 INSERT INTO `citas` (`CitaID`, `ClienteID`, `Fecha`, `Hora`) VALUES
@@ -105,7 +102,7 @@ INSERT INTO `citas` (`CitaID`, `ClienteID`, `Fecha`, `Hora`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `citasservicios`
+-- Estructura de tabla para la tabla `citasservicios`
 --
 
 CREATE TABLE `citasservicios` (
@@ -115,7 +112,7 @@ CREATE TABLE `citasservicios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `citasservicios`
+-- Volcado de datos para la tabla `citasservicios`
 --
 
 INSERT INTO `citasservicios` (`ID`, `ServicioID`, `CitaID`) VALUES
@@ -136,7 +133,7 @@ INSERT INTO `citasservicios` (`ID`, `ServicioID`, `CitaID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clientes`
+-- Estructura de tabla para la tabla `clientes`
 --
 
 CREATE TABLE `clientes` (
@@ -150,7 +147,7 @@ CREATE TABLE `clientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `clientes`
+-- Volcado de datos para la tabla `clientes`
 --
 
 INSERT INTO `clientes` (`ClienteID`, `Nombre`, `Apellido`, `Telefono`, `Email`, `Pass_word`, `AccesoUsuarioID`) VALUES
@@ -159,7 +156,7 @@ INSERT INTO `clientes` (`ClienteID`, `Nombre`, `Apellido`, `Telefono`, `Email`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comentariosvaloraciones`
+-- Estructura de tabla para la tabla `comentariosvaloraciones`
 --
 
 CREATE TABLE `comentariosvaloraciones` (
@@ -173,7 +170,7 @@ CREATE TABLE `comentariosvaloraciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `comentariosvaloraciones`
+-- Volcado de datos para la tabla `comentariosvaloraciones`
 --
 
 INSERT INTO `comentariosvaloraciones` (`ComentarioID`, `ClienteID`, `Fecha`, `EstilistaID`, `Calificacion`, `Comentario`, `Titulo`) VALUES
@@ -182,7 +179,7 @@ INSERT INTO `comentariosvaloraciones` (`ComentarioID`, `ClienteID`, `Fecha`, `Es
 -- --------------------------------------------------------
 
 --
--- Table structure for table `estilistas`
+-- Estructura de tabla para la tabla `estilistas`
 --
 
 CREATE TABLE `estilistas` (
@@ -196,7 +193,7 @@ CREATE TABLE `estilistas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `estilistas`
+-- Volcado de datos para la tabla `estilistas`
 --
 
 INSERT INTO `estilistas` (`EstilistaID`, `Nombre`, `Apellido`, `Especialidades`, `HorarioTrabajo`, `Contacto`, `imagen`) VALUES
@@ -209,7 +206,7 @@ INSERT INTO `estilistas` (`EstilistaID`, `Nombre`, `Apellido`, `Especialidades`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inventario`
+-- Estructura de tabla para la tabla `inventario`
 --
 
 CREATE TABLE `inventario` (
@@ -218,7 +215,7 @@ CREATE TABLE `inventario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `inventario`
+-- Volcado de datos para la tabla `inventario`
 --
 
 INSERT INTO `inventario` (`ProductoID`, `CantidadStock`) VALUES
@@ -226,12 +223,14 @@ INSERT INTO `inventario` (`ProductoID`, `CantidadStock`) VALUES
 (2, 5),
 (3, 15),
 (4, 20),
-(5, 8);
+(5, 8),
+(8, 6),
+(9, 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `productos`
+-- Estructura de tabla para la tabla `productos`
 --
 
 CREATE TABLE `productos` (
@@ -240,25 +239,26 @@ CREATE TABLE `productos` (
   `Nombre` varchar(100) DEFAULT NULL,
   `Descripcion` varchar(255) DEFAULT NULL,
   `PrecioVenta` decimal(10,2) DEFAULT NULL,
-  `Proveedor` varchar(100) DEFAULT NULL,
   `Imagen` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `productos`
+-- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`ProductoID`, `CategoriaID`, `Nombre`, `Descripcion`, `PrecioVenta`, `Proveedor`, `Imagen`) VALUES
-(1, 1, 'Gel', 'Maxima fijacion', 5000.00, 'Desconocido', 'gel.jpg'),
-(2, 3, 'Peine', 'Apto para cualquier tipo de peinado', 4500.00, 'Desconocido', 'PEINE.jpg'),
-(3, 2, 'After Shave', 'Perfecto para hidratar la piel luego de resurar', 3000.00, 'Desconocido', 'AFTER SHAVE.jpg'),
-(4, 2, 'Espuma para Rasurar', 'Ideal para realizar un rasurado sin irritar la peil', 4000.00, 'Desconocido', 'espuma.jpg'),
-(5, 3, 'Navaja', 'Cuenta con un corte fino y navaja agradable para la piel del rostro', 10000.00, 'Desconocido', 'navaja.jpg');
+INSERT INTO `productos` (`ProductoID`, `CategoriaID`, `Nombre`, `Descripcion`, `PrecioVenta`, `Imagen`) VALUES
+(1, 1, 'Gel', 'Maxima fijacion', 5000.00, 'gel.jpg'),
+(2, 3, 'Peine', 'Apto para cualquier tipo de peinado', 4500.00, 'PEINE.jpg'),
+(3, 2, 'After Shave', 'Perfecto para hidratar la piel luego de resurar', 3000.00, 'AFTER SHAVE.jpg'),
+(4, 2, 'Espuma para Rasurar', 'Ideal para realizar un rasurado sin irritar la peil', 4000.00, 'espuma.jpg'),
+(5, 3, 'Navaja', 'Cuenta con un corte fino y navaja agradable para la piel del rostro', 10000.00, 'navaja.jpg'),
+(8, 3, 'Rexona', 'Desodorante antitranspirante', 2000.00, 'rexona.jpg'),
+(9, 1, 'belcolor', 'Gel para el cabello', 1200.00, 'belcolor.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `servicios`
+-- Estructura de tabla para la tabla `servicios`
 --
 
 CREATE TABLE `servicios` (
@@ -268,7 +268,7 @@ CREATE TABLE `servicios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `servicios`
+-- Volcado de datos para la tabla `servicios`
 --
 
 INSERT INTO `servicios` (`ServicioID`, `Nombre`, `Precio`) VALUES
@@ -281,7 +281,7 @@ INSERT INTO `servicios` (`ServicioID`, `Nombre`, `Precio`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -293,7 +293,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`UsuarioID`, `Email`, `Pass_word`, `AccesoUsuarioID`, `NombreCompleto`) VALUES
@@ -305,7 +305,7 @@ INSERT INTO `usuarios` (`UsuarioID`, `Email`, `Pass_word`, `AccesoUsuarioID`, `N
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ventas`
+-- Estructura de tabla para la tabla `ventas`
 --
 
 CREATE TABLE `ventas` (
@@ -318,30 +318,30 @@ CREATE TABLE `ventas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `accesousuario`
+-- Indices de la tabla `accesousuario`
 --
 ALTER TABLE `accesousuario`
   ADD PRIMARY KEY (`AccesoUsuarioID`);
 
 --
--- Indexes for table `categorias`
+-- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`CategoriaID`);
 
 --
--- Indexes for table `citas`
+-- Indices de la tabla `citas`
 --
 ALTER TABLE `citas`
   ADD PRIMARY KEY (`CitaID`),
   ADD KEY `ClienteID` (`ClienteID`);
 
 --
--- Indexes for table `citasservicios`
+-- Indices de la tabla `citasservicios`
 --
 ALTER TABLE `citasservicios`
   ADD PRIMARY KEY (`ID`),
@@ -349,14 +349,14 @@ ALTER TABLE `citasservicios`
   ADD KEY `ServicioID` (`ServicioID`);
 
 --
--- Indexes for table `clientes`
+-- Indices de la tabla `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`ClienteID`),
   ADD KEY `AccesoUsuarioID` (`AccesoUsuarioID`);
 
 --
--- Indexes for table `comentariosvaloraciones`
+-- Indices de la tabla `comentariosvaloraciones`
 --
 ALTER TABLE `comentariosvaloraciones`
   ADD PRIMARY KEY (`ComentarioID`),
@@ -364,164 +364,164 @@ ALTER TABLE `comentariosvaloraciones`
   ADD KEY `EstilistaID` (`EstilistaID`);
 
 --
--- Indexes for table `estilistas`
+-- Indices de la tabla `estilistas`
 --
 ALTER TABLE `estilistas`
   ADD PRIMARY KEY (`EstilistaID`);
 
 --
--- Indexes for table `inventario`
+-- Indices de la tabla `inventario`
 --
 ALTER TABLE `inventario`
   ADD PRIMARY KEY (`ProductoID`);
 
 --
--- Indexes for table `productos`
+-- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`ProductoID`),
   ADD KEY `CategoriaID` (`CategoriaID`);
 
 --
--- Indexes for table `servicios`
+-- Indices de la tabla `servicios`
 --
 ALTER TABLE `servicios`
   ADD PRIMARY KEY (`ServicioID`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`UsuarioID`),
   ADD KEY `AccesoUsuarioID` (`AccesoUsuarioID`);
 
 --
--- Indexes for table `ventas`
+-- Indices de la tabla `ventas`
 --
 ALTER TABLE `ventas`
   ADD PRIMARY KEY (`VentaID`),
   ADD KEY `ClienteID` (`ClienteID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `accesousuario`
+-- AUTO_INCREMENT de la tabla `accesousuario`
 --
 ALTER TABLE `accesousuario`
   MODIFY `AccesoUsuarioID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `categorias`
+-- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
   MODIFY `CategoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `citas`
+-- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
   MODIFY `CitaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `citasservicios`
+-- AUTO_INCREMENT de la tabla `citasservicios`
 --
 ALTER TABLE `citasservicios`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `clientes`
+-- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
   MODIFY `ClienteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `comentariosvaloraciones`
+-- AUTO_INCREMENT de la tabla `comentariosvaloraciones`
 --
 ALTER TABLE `comentariosvaloraciones`
   MODIFY `ComentarioID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `estilistas`
+-- AUTO_INCREMENT de la tabla `estilistas`
 --
 ALTER TABLE `estilistas`
   MODIFY `EstilistaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `productos`
+-- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `ProductoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ProductoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `servicios`
+-- AUTO_INCREMENT de la tabla `servicios`
 --
 ALTER TABLE `servicios`
   MODIFY `ServicioID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `UsuarioID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `ventas`
+-- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
   MODIFY `VentaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `citas`
+-- Filtros para la tabla `citas`
 --
 ALTER TABLE `citas`
   ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`ClienteID`) REFERENCES `clientes` (`ClienteID`);
 
 --
--- Constraints for table `citasservicios`
+-- Filtros para la tabla `citasservicios`
 --
 ALTER TABLE `citasservicios`
   ADD CONSTRAINT `citasservicios_ibfk_1` FOREIGN KEY (`CitaID`) REFERENCES `citas` (`CitaID`),
   ADD CONSTRAINT `citasservicios_ibfk_2` FOREIGN KEY (`ServicioID`) REFERENCES `servicios` (`ServicioID`);
 
 --
--- Constraints for table `clientes`
+-- Filtros para la tabla `clientes`
 --
 ALTER TABLE `clientes`
   ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`AccesoUsuarioID`) REFERENCES `accesousuario` (`AccesoUsuarioID`);
 
 --
--- Constraints for table `comentariosvaloraciones`
+-- Filtros para la tabla `comentariosvaloraciones`
 --
 ALTER TABLE `comentariosvaloraciones`
   ADD CONSTRAINT `comentariosvaloraciones_ibfk_1` FOREIGN KEY (`ClienteID`) REFERENCES `clientes` (`ClienteID`),
   ADD CONSTRAINT `comentariosvaloraciones_ibfk_2` FOREIGN KEY (`EstilistaID`) REFERENCES `estilistas` (`EstilistaID`);
 
 --
--- Constraints for table `inventario`
+-- Filtros para la tabla `inventario`
 --
 ALTER TABLE `inventario`
   ADD CONSTRAINT `inventario_ibfk_1` FOREIGN KEY (`ProductoID`) REFERENCES `productos` (`ProductoID`);
 
 --
--- Constraints for table `productos`
+-- Filtros para la tabla `productos`
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`CategoriaID`) REFERENCES `categorias` (`CategoriaID`);
 
 --
--- Constraints for table `usuarios`
+-- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`AccesoUsuarioID`) REFERENCES `accesousuario` (`AccesoUsuarioID`);
 
 --
--- Constraints for table `ventas`
+-- Filtros para la tabla `ventas`
 --
 ALTER TABLE `ventas`
   ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`ClienteID`) REFERENCES `clientes` (`ClienteID`);

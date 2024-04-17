@@ -35,6 +35,11 @@
         <a href="modificarPrecioArticulo.php" class="section-link">
             <h2>Modificar Precio Articulo</h2>
         </a>
+
+        <a href="ingresarProductos.php" class="section-link">
+            <h2>Ingresar Productos</h2>
+        </a>
+
     </div>
 
     <div>
