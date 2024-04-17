@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     </ul>
 
 
-    <h1>Ingresar Servicios</h1>
+    <h1>Ingresar Categorias</h1>
     <form id="formulario" action="" method="POST">
 
         <div class="form-group">

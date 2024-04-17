@@ -9,7 +9,7 @@
 
     <div class="section-links">
         <a href="registrarIngresos.php" class="section-link">
-            <h2>Registrar Ingresos</h2>
+            <h2>Registrar Ventas</h2>
         </a>
 
         <a href="resumenVentas.php" class="section-link">

@@ -22,7 +22,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="links">
                         <a class="nav-link active" aria-current="page" href="VistaAdmin.php">Menu Principal</a>
-                        <a class="nav-link" href="registrarIngresos.php">Registrar Ingresos</a>
+                        <a class="nav-link" href="registrarIngresos.php">Registrar Ventas</a>
                         <a class="nav-link" href="resumenVentas.php">Resumen de Ventas</a>
                         <a class="nav-link" href="ingresarEstilista.php">Ingresar Estilista</a>
                         <a class="nav-link" href="modificarEstilista.php">Modificar Estilista</a>
