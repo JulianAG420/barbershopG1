@@ -55,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['id'] = $sesionAbiertaCliente['clienteid'];
                 $_SESSION['tipoAcceso'] = $sesionAbiertaCliente['accesousuarioid'];
                 $_SESSION['login'] = TRUE;
-                $login = TRUE;
                 header("Location: index.php?cliente&id={$_SESSION['id']}");
             } elseif ($authAdmin) {
                 session_start();
@@ -63,7 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['id'] = $sesionAbiertaAdmin['usuarioid'];
                 $_SESSION['tipoAcceso'] = $sesionAbiertaAdmin['accesousuarioid'];
                 $_SESSION['login'] = TRUE;
-                $login = TRUE;
                 header("Location: index.php?admin&id={$_SESSION['id']}");
             } else {
                 $errores[] = "Contraseña Incorrecta";
