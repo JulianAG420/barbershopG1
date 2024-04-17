@@ -30,6 +30,7 @@
                         <a class="nav-link" href="modificarInventario.php">Modificar Inventario</a>
                         <a class="nav-link" href="ingresarServicios.php">Ingresar Servicios</a>
                         <a class="nav-link" href="modificarServicios.php">Modificar Servicios</a>
+                        <a class="nav-link" href="ingresarCategoria.php">Ingresar Categorias</a>
                         <a class="nav-link" href="ingresarProductos.php">Ingresar Productos</a>
                         <a class="nav-link" href="eliminarProductos.php">Eliminar Productos</a>
                     </div>

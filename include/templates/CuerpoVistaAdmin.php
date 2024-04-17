@@ -40,6 +40,10 @@
             <h2>Modificar Precio Articulo</h2>
         </a>
 
+        <a href="ingresarCategoria.php" class="section-link">
+            <h2>Ingresar Categorias</h2>
+        </a>
+        
         <a href="ingresarProductos.php" class="section-link">
             <h2>Ingresar Productos</h2>
         </a>
