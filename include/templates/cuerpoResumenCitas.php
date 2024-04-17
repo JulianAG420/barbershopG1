@@ -1,10 +1,13 @@
 <?php
 require_once "DAL/cita.php";
 
+session_start();
+$id = $_SESSION['id'];
+
 $query = "SELECT c.CitaID, s.Nombre, s.Precio, c.Fecha, c.Hora
 FROM citas AS c
 INNER JOIN citasservicios AS cs ON cs.CitaID = c.CitaID
-INNER JOIN servicios AS s ON s.ServicioID = cs.ServicioID";
+INNER JOIN servicios AS s ON s.ServicioID = cs.ServicioID WHERE ClienteID = $id";
 
 $resultadosQuery = getArray($query);
 
