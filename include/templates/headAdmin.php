@@ -14,25 +14,28 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="links">
-                    <a class="nav-link active" aria-current="page" href="VistaAdmin.php">Menu Principal</a>
-                    <a class="nav-link" href="registrarIngresos.php">Registrar Ingresos</a>
-                    <a class="nav-link" href="ingresarEstilista.php">Ingresar Estilista</a>
-                    <a class="nav-link" href="modificarEstilista.php">Modificar Estilista</a>
-                    <a class="nav-link" href="modificarPrecioArticulo.php">Modificar Precio Articulo</a>
-                    <a class="nav-link" href="modificarInventario.php">Modificar Inventario</a>
-                    <a class="nav-link" href="ingresarServicios.php">Ingresar Servicios</a>
-                    <a class="nav-link" href="modificarServicios.php">Modificar Servicios</a>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="links">
+                        <a class="nav-link active" aria-current="page" href="VistaAdmin.php">Menu Principal</a>
+                        <a class="nav-link" href="registrarIngresos.php">Registrar Ingresos</a>
+                        <a class="nav-link" href="resumenVentas.php">Resumen de Ventas</a>
+                        <a class="nav-link" href="ingresarEstilista.php">Ingresar Estilista</a>
+                        <a class="nav-link" href="modificarEstilista.php">Modificar Estilista</a>
+                        <a class="nav-link" href="modificarPrecioArticulo.php">Modificar Precio Articulo</a>
+                        <a class="nav-link" href="modificarInventario.php">Modificar Inventario</a>
+                        <a class="nav-link" href="ingresarServicios.php">Ingresar Servicios</a>
+                        <a class="nav-link" href="modificarServicios.php">Modificar Servicios</a>
+                        <a class="nav-link" href="ingresarProductos.php">Ingresar Productos</a>
+                        <a class="nav-link" href="eliminarProductos.php">Eliminar Productos</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 </body>
 
 </html>

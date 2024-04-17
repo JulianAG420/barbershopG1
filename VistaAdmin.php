@@ -1,5 +1,5 @@
 <?php
- require_once "include/templates/head.php"
+ require_once "include/templates/headAdmin.php"
 ?>
 
 <?php

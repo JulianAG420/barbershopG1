@@ -25,3 +25,33 @@
     
         return $retorno;
     }
+
+    function eliminarProducto($bId) {
+        $retorno = false;
+    
+        try {
+            $oConexion = Conectar();
+    
+            // formato de datos utf8
+            if(mysqli_set_charset($oConexion, "utf8")){
+                $stmt = $oConexion->prepare("DELETE FROM productos WHERE ProductoID = ?");
+                $stmt->bind_param("s", $pId);
+    
+                // set parametros y luego ejecutar
+                $pId = $bId;
+    
+                if ($stmt->execute()){
+                    $retorno = true;
+                }
+            }
+    
+        } catch (\Throwable $th) {
+            //almacenar información en bitacora $th
+            //throw $th;
+            echo $th;
+        }finally{
+            Desconectar($oConexion);
+        }
+    
+        return $retorno;
+    }

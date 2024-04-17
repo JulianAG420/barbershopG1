@@ -1,4 +1,5 @@
 <?php
+$login = false;
 require_once "include/templates/headAdmin.php";
 ?>
 
